@@ -12,4 +12,4 @@ I made an application where you can generate an HTML file of a generated team fo
 
 # Walkthrough Video
 
-![](Team-generator-app-video.gif)
+![](./gif/Team-generator-app-video.gif)
