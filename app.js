@@ -63,12 +63,12 @@ const questions = [
         message: "Would you like to add another employee to the team?"
     },
 ]
-function promptUser(){
+function startApp(){
     inquirer.prompt(questions)
     .then(answers => {
         teamArray.push(answers)
         if(answers.addEmployee){
-            promptUser();
+            startApp();
         }
         else {
             //console.log(render(output))
@@ -100,4 +100,4 @@ function promptUser(){
     })
 }
 
-promptUser();
+startApp();
