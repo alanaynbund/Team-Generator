@@ -1,0 +1,23 @@
+{
+  "name": "team-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanaynbund/Team-Generator.git"
+  },
+  "author": "Alan Aynbund",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanaynbund/Team-Generator/issues"
+  },
+  "homepage": "https://github.com/alanaynbund/Team-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1",
+    "jest": "^27.0.5"
+  }
+}
