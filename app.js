@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const output = []
+const teamArray = []
 const questions = [
     {
         type: "list",
@@ -63,3 +63,41 @@ const questions = [
         message: "Would you like to add another employee to the team?"
     },
 ]
+function promptUser(){
+    inquirer.prompt(questions)
+    .then(answers => {
+        output.push(answers)
+        if(answers.addEmployee){
+            promptUser();
+        }
+        else {
+            //console.log(render(output))
+            const team = output.map(worker =>{
+                switch(worker.role){
+                    case "Manager":
+                        return new Manager(worker.name, worker.id, worker.email, worker.office)
+                    case "Engineer":
+                        return new Engineer(worker.name, worker.id, worker.email, worker.github)
+                    case "Intern":
+                        return new Intern(worker.name, worker.id, worker.email, worker.school)
+                    default:
+                        throw "Unknown Employee Type"
+                }
+            });
+            fs.writeFile(outputPath, render(team), err =>{
+                if(err){
+                    throw err
+                }
+                console.log("Success!")
+            });
+            
+        }
+    })
+    .catch(err => {
+        if(err){
+            console.log("Error: ", err);
+        }
+    })
+}
+
+promptUser();
