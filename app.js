@@ -66,13 +66,13 @@ const questions = [
 function promptUser(){
     inquirer.prompt(questions)
     .then(answers => {
-        output.push(answers)
+        teamArray.push(answers)
         if(answers.addEmployee){
             promptUser();
         }
         else {
             //console.log(render(output))
-            const team = output.map(worker =>{
+            const team = teamArray.map(worker =>{
                 switch(worker.role){
                     case "Manager":
                         return new Manager(worker.name, worker.id, worker.email, worker.office)
