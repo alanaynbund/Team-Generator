@@ -1,1 +1,15 @@
 # Team-Generator
+
+## Made With
+  * HTML
+  * JavaScript
+  * CSS
+  * Node
+  * Jest
+
+# Description
+I made an application where you can generate an HTML file of a generated team for a workspace by prompting the user multiple questions about roles and positions.
+
+# Walkthrough Video
+
+![](Team-generator-app-video.gif)
